@@ -1,0 +1,706 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+:root
+{
+    --primary-color: rgb(255, 195, 32);
+}
+
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    font-family: 'Lato', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+
+a
+{
+    text-decoration: none;
+    color: #333;
+}
+
+
+h1,h2
+{
+    font-weight: 300;
+}
+
+.cloud-img
+{
+    width: 50px;
+}
+
+/* to make image stay in its container, set width to 100% */
+.cloud img, .cli img
+{
+    width: 100%; 
+}
+
+.container
+{
+    max-width: 1100px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0 40px;
+}
+
+/* NAVBAR */
+.navbar
+{
+    background-color: var(--primary-color);
+    color: white;
+    height: 70px;
+}
+
+
+.navbar .flex-nav
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    overflow: hidden;
+}
+
+.navbar ul
+{
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav ul > li > a
+{
+    color: white;
+    padding: 0.5em 0.3em;
+    margin: 0px 0.5em;
+}
+
+.navbar a:hover
+{
+    border-bottom: 2px solid white;
+}
+
+/* SHOWCASE AREA */
+.showcase
+{
+    height: 400px;
+    background-color: var(--primary-color);
+    color: white;
+    position: relative;
+}
+
+.showcase h1
+{
+    font-size: 2.5em;
+}
+
+.showcase p
+{
+    margin: 1.5em 0em;
+}
+
+.grid
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    overflow: visible;
+}
+
+.card
+{
+    position: relative;
+    color: #333;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    left: 10px;
+    padding: 10px;
+}
+
+.showcase-form 
+{
+    position: relative;
+    top: 60px;
+    height: 350px; /* when we want it to overflow something, we put overflow:visible on the thing its overflowing */
+    width: 400px;
+    padding: 3em;
+    z-index: 100;
+    justify-self: flex-end;
+}
+
+.showcase-form .form-control
+{
+    margin: 2em 0em;
+}
+
+
+input[type="text"], input[type="email"]
+{
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid rgba(180, 190, 203, 0.3);
+}
+
+/* removed outline when input is focused */
+.showcase-form input:focus
+{
+    outline: none;
+}
+
+.btn
+{
+    background: var(--primary-color);
+    border: none;
+    padding: 0.5em 2em;
+    cursor: pointer;
+    border-radius: 5px;
+    color: white;
+}
+
+.btn-outline
+{
+    border: 1px solid white;
+    background: transparent;
+}
+
+.showcase::before, .showcase::after
+{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    top: 95%;
+    transform: skewY(-2deg);
+    background: white;
+}
+
+
+/* STATS */
+.stats
+{
+    padding-top: 5em;
+}
+
+.stats .grid-3
+{
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-content: center;
+    padding-top: 3em;
+}
+
+.stats .heading
+{
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.stats .grid > * > h3
+{
+    font-size: 2em;
+}
+
+.stats .grid > * > p
+{
+    font-size: 1.1em;
+    font-weight: bold;
+    padding: 0.75em 0em;
+}
+
+.text-center
+{
+    text-align: center;
+}
+
+/* CLI */
+
+.cli .grid
+{
+    /* margin-top: 6em; */
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+    padding: 4em;
+}
+
+.cli .grid > *:first-child
+{
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+}
+
+
+/* CLOUD */
+.cloud
+{
+    background-color: var(--primary-color);
+    padding: 2em 0em;
+    color: white;
+}
+
+.cloud h2
+{
+    font-size: 3em;
+}
+
+.cloud p
+{
+    padding-bottom: 1.5em;
+}
+
+.btn-dark
+{
+    background-color: #333;
+    color: white;
+}
+
+/* CARDS */
+.flex
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.languages h2
+{
+    margin: 2em 0em;
+}
+
+.flex .card
+{
+    text-align: center;
+    margin: 1em 1em 3em;
+    transition: transform 0.5s ease-in-out;
+}
+
+.card h4
+{
+    font-size: 1.5em;
+    padding-bottom: 0.5em;
+}
+
+.flex .card:hover
+{
+    transform: translateY(-20px); /* to add a transition to ur element, make sure to use transform property */
+}
+
+
+/* FOOTER */
+.footer
+{
+    background-color: rgb(255, 136, 0);
+    color: white;
+    padding: 4em 0em;
+}
+
+.footer ul
+{
+    list-style: none;
+}
+
+.footer li > a
+{
+    color: white;
+}
+
+.logos > i
+{
+    padding: 0em 0.5em;
+}
+
+
+.footer .grid-3
+{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-content: center;
+}
+
+/* FEATURES */
+.features
+{
+    background: var(--primary-color);
+    height: 250px;
+    color: white;
+    /* padding: ; */
+}
+
+.features h2
+{
+    font-size: 3em;
+}
+
+.features p
+{
+    font-size: 1.1em;
+}
+
+.features img
+{
+    width: 200px;
+    justify-self: flex-end;
+}
+
+
+/* PLATFORM */
+.platform
+{
+    padding: 4em 0em;
+    background: #eee;
+}
+
+.platform h2
+{
+    font-size: 3em;
+    padding-bottom: 8px;
+}
+
+.platform p
+{
+    padding-bottom: 2em;
+}
+
+.platform img
+{
+    width: 300px;
+    justify-self: flex-end;
+}
+
+/* CARDS FOR features page */
+.features-info
+{
+    padding: 3em 0em;
+}
+
+.features-info .grid
+{
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+}
+
+.feature-card
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 2em 1em;
+}
+
+.feature-card p
+{
+    padding-left: 1em;
+}
+
+.features-info .grid > *:first-child
+{
+    grid-column: 1/4;
+    grid-row: 1;
+}
+
+.features-info .grid > *:nth-child(2)
+{
+    grid-column: 1/3;
+    grid-row: 2;
+}
+
+.features-info .grid > *:nth-child(3)
+{
+    grid-row: 2;
+    grid-column: 3/4;
+}
+
+/* DOCS */
+/* FEATURES */
+.docs
+{
+    background: var(--primary-color);
+    height: 250px;
+    color: white;
+    /* padding: ; */
+}
+
+.docs h2
+{
+    font-size: 3em;
+}
+
+.docs p
+{
+    font-size: 1.1em;
+}
+
+.docs img
+{
+    width: 200px;
+    justify-self: flex-end;
+}
+
+
+/* MAIN INFO AND SIDEBAR */
+.document-main
+{
+    padding: 4em 0em;
+}
+
+.document-main .grid
+{
+    grid-template-columns: 25% 75%;
+    gap: 3em;
+}
+
+.sidebar
+{
+    align-self: flex-start;
+    padding: 1em;
+    background: rgb(238, 238, 238);
+}
+
+.sidebar h4
+{
+    font-size: 1.2em;
+    color: #666;
+}
+
+.sidebar ul 
+{
+    list-style: none;
+    padding-bottom: 1em;
+}
+
+
+.sidebar ul li
+{
+    color: rgb(103, 103, 103);
+    border-bottom: 1px solid rgba(161, 160, 160, 0.3);
+}
+
+/* MAIN INFO */
+.main-info 
+{
+    
+}
+
+.main-info h3
+{
+    font-size: 1.1em;
+    color: rgb(118, 118, 118);
+    padding: 1em 0em;
+}
+
+.main-info p
+{
+    color: #777;
+}
+
+.main-flex
+{
+    display: flex;
+    align-items: center;
+    color: white;
+    background-color: rgb(57, 164, 68);
+    padding: 0.5em;
+    margin-top: 0.5em;
+}
+
+.main-flex p
+{
+    color: white;
+    padding-left: 0.5em;
+}
+
+.btn-cli
+{
+    margin-top: 0.5em;
+}
+
+.ins
+{
+    font-weight: 900;
+    color: rgb(178, 178, 178)!important;
+    background: #333;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 0.3em 0.75em;
+    margin: 0.2em 0em 1em 0em;
+    font-size: 0.9em;
+}
+
+/* MEDIA QUERIES */
+
+/* TABLETS AND UNDER */
+@media(max-width: 768px)
+{
+    .grid
+    {
+    grid-template-columns: 1fr;
+    }
+
+    .cli .grid
+    {
+        /* margin-top: 6em; */
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        gap: 20px;
+        padding: 4em;
+    }
+    
+    .stats .grid-3
+    {
+        grid-template-columns: 1fr;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .docs
+    {
+        text-align: center;
+        height: auto;
+    }
+
+    .docs .grid img
+    {
+        justify-self: center;
+        padding: 1em;
+    }
+
+    .stats .grid-3 > *
+    {
+        margin-top: 2em;
+    }
+    
+    .footer .grid-3
+    {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .footer .grid-3 > *
+    {
+        margin: 1em 0em;
+    }
+
+    .showcase-form
+    {
+        justify-self: center;
+    }
+
+    /* height: auto; the element will automatically adjust its height to allow its content to be displayed correctly */
+    .showcase
+    {
+        text-align: center;
+        height: auto;
+    }
+
+    .cli .grid > *:first-child
+    {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+
+    /* FEATURES */
+    .features
+    {
+        height: auto;
+        text-align: center;
+    }
+
+    .features img
+    {
+        justify-self: center;
+        padding: 1em 0em;
+    }
+
+
+    /* PLATFORM */
+    .platform
+    {
+        text-align: center;
+    }
+
+    .platform img
+    {
+        padding: 2em 0em;
+        justify-self: center;
+    }
+
+    .feature-card
+    {
+        flex-wrap: wrap;
+    }
+
+    .feature-card > p
+    {
+        padding-top: 1em;
+    }
+
+
+    /* DOCS */
+    .document-main .grid
+    {
+        grid-template-columns: 1fr;
+    }
+
+
+}
+
+/* MOBILE */
+@media(max-width: 550px)
+{
+    .feature-card > p
+    {
+        font-size: 0.75em;
+    }
+
+    .cloud img
+    {
+        padding-top: 2em;
+    }
+
+    .navbar .flex-nav
+    {
+        flex-direction: column;
+    }
+
+    .cloud-img
+    {
+        display: block;
+        margin: 0 auto;
+        height: auto;
+        padding: 1em 0em;
+    }
+
+    .navbar
+    {
+        background-color: var(--primary-color);
+        color: white;
+        height: 110px;
+    }
+
+    .navbar ul
+    {
+        justify-content: center;
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    .navbar ul li
+    {
+        padding: 0.5em 0em;
+    }
+
+}
